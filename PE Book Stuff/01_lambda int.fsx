@@ -31,4 +31,5 @@ let rec eval (op, env) =
         match eval(e, env) with
         |(Numb 1) -> eval(f, env)   (* 1 is true *)
         | (Numb _) -> eval(g, env)  (* non-1 is false *)
+
 let rec interpret e = eval (e, ([], []))

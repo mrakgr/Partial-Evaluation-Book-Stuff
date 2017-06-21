@@ -58,6 +58,7 @@
     <None Include="App.config" />
     <None Include="01_lambda int.fsx" />
     <None Include="02_recursive_eq_int.fsx" />
+    <None Include="03_flow_chart_int.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

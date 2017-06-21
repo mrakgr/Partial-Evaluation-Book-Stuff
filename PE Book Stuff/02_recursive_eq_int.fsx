@@ -6,8 +6,10 @@ type expr =
     | If of expr * expr * expr (* Conditional *)
     | Call of string * expr list (* Function call *)
     | Op of string * expr list (* Base application *)
+
 let rec lookup (x, (n::ns, v::vs)) =
     if x = n then v else lookup(x, (ns, vs))
+
 let rec eval (op, env, pgm) =
     match op with
     | Int n -> n
@@ -26,6 +28,7 @@ and evlist (l, env, pgm) =
     match l with 
     | [] -> []
     | e::es -> eval(e, env, pgm) :: evlist(es, env, pgm)
+
 let interpret (pgm, args) =
     let (_, (vars, exp)::_) = pgm
     eval(exp, (vars, args), pgm)
